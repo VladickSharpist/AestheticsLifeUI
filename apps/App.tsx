@@ -1,7 +1,10 @@
+import styles from './styles.scss'
+import cn from 'classnames'
+
 export const App = () => {
   return(
-    <div>
-      "Working"
+    <div className={cn(styles.test)}>
+      "Working Roma"
     </div>
   )
 }
