@@ -1,0 +1,1 @@
+export { AestheticsLife } from './AestheticsLife';

@@ -1,10 +1,14 @@
-import styles from './styles.scss'
-import cn from 'classnames'
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { Route, BrowserRouter } from 'react-router-dom';
+import { AppLayout } from './Shared/components/layouts/AppLayout';
 
-export const App = () => {
-  return(
-    <div className={cn(styles.test)}>
-      "Working Roma"
-    </div>
-  )
+export default function App() {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Route path='/:appName/:rest?' component={AppLayout} />
+      </BrowserRouter>
+    </Provider>
+  );
 }

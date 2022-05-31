@@ -4,12 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry:[ 'babel-polyfill' , path.resolve(__dirname, '..', './apps/index.tsx')],
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-  devServer: {
-    port: 5050,
-  },
   module: {
     rules: [
       {
@@ -53,6 +47,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '..', './build'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -60,4 +55,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
   ],
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.svg', '.tsx', '.ts', '.js'],
+  },
 }
