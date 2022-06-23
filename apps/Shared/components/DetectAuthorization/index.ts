@@ -1,0 +1,1 @@
+export { DetectAuthorization } from './DetectAuthorization';
