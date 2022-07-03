@@ -1,4 +1,3 @@
-import { environments } from "../../utils/enviroments";
 import { request } from "../../utils/request";
 
 export interface IRefreshRequest {
@@ -14,8 +13,7 @@ export interface IRefreshResponse {
 
 export const refresh = async (data: IRefreshRequest) => {
   const response = await request.postQueryString<IRefreshResponse>({
-    url: '/api/Account/Refresh',
-    baseURL: environments.web,
+    url: '/api/auth/Account/Refresh',
     data,
   });
 

@@ -1,4 +1,3 @@
-import { environments } from "../../utils/enviroments"
 import { request } from "../../utils/request"
 
 export interface ICurrentUserDataResponse {
@@ -12,8 +11,7 @@ export interface ICurrentUserDataResponse {
 
 export const currentUserData = async () => {
   const response = await request.get<ICurrentUserDataResponse>({
-    url: '/api/Account/CurrentUserData',
-    baseURL: environments.web,
+    url: '/api/auth/Account/CurrentUserData',
   })
   return response.data;
 }
