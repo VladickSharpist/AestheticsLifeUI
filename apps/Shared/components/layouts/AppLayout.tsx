@@ -2,8 +2,8 @@ import { Route, Switch } from 'react-router-dom';
 import { AestheticsLife } from '../../../AestheticsLife';
 import { Auth } from '../../../Auth';
 import { LoginForm } from '../../../Auth/components/LoginForm';
-import { Health } from '../../../Health';
-import { Training } from '../../../Training';
+// import { Health } from '../../../Health';
+// import { Training } from '../../../Training';
 import { DetectAuthorization } from '../DetectAuthorization';
 
 export const AppLayout = () => {
@@ -13,8 +13,8 @@ export const AppLayout = () => {
         <Route path='/aesthetics-life/:rest?' component={AestheticsLife} />
         <Route path='/auth/:rest?' component={Auth} />
         <Route path='/login/:rest?' component={LoginForm} />
-        <Route path='/training/:rest?' component={Training} />
-        <Route path='/health/:rest?' component={Health} />
+        {/* <Route path='/training/:rest?' component={Training} />
+        <Route path='/health/:rest?' component={Health} /> */}
       </Switch>
     </DetectAuthorization>
   );
