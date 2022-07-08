@@ -23,6 +23,7 @@
   "homepage": "https://github.com/VladickSharpist/AestheticsLifeUI#readme",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@microsoft/signalr": "^6.0.6",
     "@types/react-redux": "^7.1.23",
     "axios": "^0.27.2",
     "babel-polyfill": "^6.26.0",
