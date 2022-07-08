@@ -4,7 +4,9 @@ import { addRequestInterceptorToken } from './refreshTokenInterceptor';
 type TMiddleware = (config: AxiosRequestConfig) => AxiosRequestConfig;
 
 const makeRequest = (middlewares: TMiddleware[]) => {
-  const instance = axios.create();
+  const instance = axios.create({
+    baseURL: "https://localhost:7119",
+  });
 
   addRequestInterceptorToken(instance);
 

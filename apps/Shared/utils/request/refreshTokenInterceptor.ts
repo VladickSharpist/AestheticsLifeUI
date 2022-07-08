@@ -1,7 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import { api } from "../../api";
 import { IRefreshRequest, IRefreshResponse } from "../../api/account/refresh";
-import { environments } from "../enviroments";
 import { isTokenNeedRefresh } from "../isTokenNeedRefresh";
 import { getUserAccessInfo, setUserData } from "../user/storageUserData";
 
@@ -21,7 +20,7 @@ const sendRequest = async (refreshObject: IRefreshRequest) => {
       refreshToken,
       refreshTokenExpiresAt,
       accessTokenExpiresAt,
-    } = (await axios.post<IRefreshResponse>(`${environments.web}api/Account/Refresh?refreshToken=${refreshObject.refreshToken}`)).data;
+    } = (await axios.post<IRefreshResponse>(`https://localhost:7119/api/auth/Account/Refresh?refreshToken=${refreshObject.refreshToken}`)).data;
     
     if (!refreshToken || !accessToken) {
       throw new Error('REFRESH_TOKEN_PROBLEM 2');

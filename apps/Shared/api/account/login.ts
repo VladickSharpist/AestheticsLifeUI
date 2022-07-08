@@ -1,4 +1,3 @@
-import { environments } from "../../utils/enviroments";
 import { request } from "../../utils/request"
 
 export interface ILoginReqeust {
@@ -15,8 +14,7 @@ export interface ILoginResponse {
 
 export const login = async (data: ILoginReqeust) => {
   const response = await request.post<ILoginResponse>({
-    url: '/api/Account/Login',
-    baseURL: environments.web,
+    url: '/api/auth/Account/Login',
     data,
   });
 
