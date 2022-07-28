@@ -4,6 +4,9 @@ import { registrationFormInitialValues } from './types';
 import style from './styles.scss';
 import { useEffect } from 'react';
 import { registration } from '../../../Shared/api/account/registration';
+import { toast } from 'react-toastify';
+import { redirectToLink } from '../../../Shared/utils/redirectToLink';
+import { makeLink } from '../../../Shared/utils/makeLink';
 interface IProps { 
     first?: string;
     second?: number;
@@ -16,6 +19,8 @@ export const RegistrationForm = ({ first, second }: IProps) => {
         onSubmit: async (values) => {
             const response = await registration(values);
             console.log(response);
+            toast("Good job boy, go to the gym!!!");
+            redirectToLink(makeLink("/aesthetics-life"));
         }
     });
 
