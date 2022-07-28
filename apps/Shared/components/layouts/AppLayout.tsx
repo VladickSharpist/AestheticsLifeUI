@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { AestheticsLife } from '../../../AestheticsLife';
 import { Auth } from '../../../Auth';
 import { LoginForm } from '../../../Auth/components/LoginForm';
@@ -14,7 +14,7 @@ export const AppLayout = () => {
         <Switch>
         <Route path='/aesthetics-life/:rest?' component={AestheticsLife} />
         <Route path='/auth/:rest?' component={Auth} />
-        <Route path='/login/:rest?' component={LoginForm} />
+        {/* <Route path='/login/:rest?' component={LoginForm} /> */}
         {/* <Route path='/training/:rest?' component={Training} />
         <Route path='/health/:rest?' component={Health} /> */}
         </Switch>

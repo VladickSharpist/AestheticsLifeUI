@@ -1,6 +1,8 @@
 import { HttpTransportType, HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
 import { PropsWithChildren, useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import { getUserAccessInfo } from "../../utils/user/storageUserData";
+import 'react-toastify/dist/ReactToastify.css';
 
 interface IProps {}
 
@@ -31,5 +33,6 @@ export const Notifications = ({children} : TProps) =>{
     return(
     <>
       {children}
+      <ToastContainer />
     </>);
 }
