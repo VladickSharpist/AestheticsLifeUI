@@ -1,5 +1,6 @@
 import { HttpTransportType, HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
 import { PropsWithChildren, useEffect, useState } from "react";
+import { getUserAccessInfo } from "../../utils/user/storageUserData";
 
 interface IProps {}
 
@@ -9,7 +10,8 @@ export const Notifications = ({children} : TProps) =>{
     const connection = new HubConnectionBuilder()
     .withUrl("https://localhost:7119/notifications",{
         skipNegotiation: true,
-        transport: HttpTransportType.WebSockets
+        transport: HttpTransportType.WebSockets,
+        accessTokenFactory: () => getUserAccessInfo()?.accessToken || ''
     })
     .withAutomaticReconnect()
     .build();
@@ -22,7 +24,7 @@ export const Notifications = ({children} : TProps) =>{
             console.log(err);
             setTimeout(start, 5000);
         }
-    };
+    };  
 
     start();
 
